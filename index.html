@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>three-examples</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+    }
+
+    iframe {
+      flex: 1;
+    }
+
+    .menus {
+      padding: 0 20px;
+      border-right: 1px solid #ddd;
+    }
+
+    .menus>a {
+      display: block;
+      margin: 5px 0;
+      color: #045b88;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .menus>a:hover {
+      text-decoration: underline;
+    }
+    .menus .example.active {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="menus">
+    <h3>Three Examples</h3>
+    <a class="example active" target="particle-snowflake">粒子雪花</a>
+    <a class="example" target="particle-raindrop">粒子雨点</a>
+  </div>
+
+  <iframe src="" frameborder="0"></iframe>
+
+  <script>
+    const iframe = document.querySelector('iframe')
+    const examples = document.querySelectorAll('.example')
+    for (const example of examples) {
+      example.addEventListener('click', () => {
+        const target = example.target
+        window.location.hash = `/${target}`
+        iframe.src = `/examples/${target}/${target}.html`
+        document.querySelector('.active').classList.remove('active')
+        example.classList.add('active')
+      })
+    }
+
+    if (window.location.hash) {
+      document.querySelector(`[target=${window.location.hash.slice(2)}]`).click()
+    }
+    else {
+      document.querySelector('.example.active').click()
+    }
+  </script>
+</body>
+
+</html>
