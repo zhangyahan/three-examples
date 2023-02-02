@@ -45,11 +45,11 @@ function init() {
 
   const textureLoader = new THREE.TextureLoader()
 
-  const sprite1 = textureLoader.load('../textures/sprites/snowflake1.png')
-  const sprite2 = textureLoader.load('../textures/sprites/snowflake2.png')
-  const sprite3 = textureLoader.load('../textures/sprites/snowflake3.png')
-  const sprite4 = textureLoader.load('../textures/sprites/snowflake4.png')
-  const sprite5 = textureLoader.load('../textures/sprites/snowflake5.png')
+  const sprite1 = textureLoader.load('/textures/sprites/snowflake1.png')
+  const sprite2 = textureLoader.load('/textures/sprites/snowflake2.png')
+  const sprite3 = textureLoader.load('/textures/sprites/snowflake3.png')
+  const sprite4 = textureLoader.load('/textures/sprites/snowflake4.png')
+  const sprite5 = textureLoader.load('/textures/sprites/snowflake5.png')
 
   for (let i = 0; i < 10000; i++) {
     const x = Math.random() * 2000 - 1000
