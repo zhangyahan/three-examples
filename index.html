@@ -64,7 +64,7 @@
       example.addEventListener('click', () => {
         const target = example.target
         window.location.hash = `/${target}`
-        iframe.src = `/examples/${target}/${target}.html`
+        iframe.src = `./examples/${target}/${target}.html`
         document.querySelector('.active').classList.remove('active')
         example.classList.add('active')
       })
